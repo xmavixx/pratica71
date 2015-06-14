@@ -58,7 +58,7 @@ public class JogadorComparator implements Comparator<Jogador>{
     public int comparaNome(String n1, String n2)
     {
         //Comparando o tamanho dos nomes
-        if(n1.length() <= n2.length())
+        if(n1.length() < n2.length())
         {
             //Comparando letra por letra
             for(int i = 0; i <= n1.length(); i++)
@@ -84,7 +84,7 @@ public class JogadorComparator implements Comparator<Jogador>{
         else
         {
             //Comparando letra por letra
-            for(int i = 0; i <= n2.length(); i++)
+            for(int i = 0; i < n2.length(); i++)
             {
                 if(n1.charAt(i) < n2.charAt(i))
                 {
