@@ -26,5 +26,13 @@ package utfpr.ct.dainf.if62c.pratica;
     public int compareTo(Jogador jogador) {
         return numero - jogador.numero;
     }
-
+    
+    public void setNome(String nome)
+    {
+        this.nome = nome;
+    }
+    public void serNumero(int numero)
+    {
+        this.numero = numero;
+    }
 }
