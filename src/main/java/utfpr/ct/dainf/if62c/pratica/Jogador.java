@@ -31,7 +31,7 @@ package utfpr.ct.dainf.if62c.pratica;
     {
         this.nome = nome;
     }
-    public void serNumero(int numero)
+    public void setNumero(int numero)
     {
         this.numero = numero;
     }
