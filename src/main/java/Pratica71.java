@@ -34,15 +34,23 @@ public class Pratica71 {
         
         Scanner scanner = new Scanner(System.in);
         int numeroJogadores = 0;
-        System.out.print("Digite o numero de jogadores: ");
-        if (scanner.hasNextInt()) {
-            numeroJogadores = scanner.nextInt();
-        } else {
-            System.out.println("Digite um número!");
+        boolean valido = true;
+        
+        while(valido)
+        {
+            System.out.print("Digite o numero de jogadores: ");
+            if (scanner.hasNextInt()) {
+                numeroJogadores = scanner.nextInt();
+                valido = false;
+            } else {
+                System.out.println("Digite um número!");
+                Object lixo = scanner.next();
+            }
         }
         int numero = 0;
         String nome;
-        boolean valido = true;
+        valido = true;
+        
         while(numeroJogadores >0)
         {
             System.out.print("Digite o numero do jogador: ");
@@ -70,6 +78,8 @@ public class Pratica71 {
             valido = true;
                     
         }
+        
+        
         Collections.sort(lista, new JogadorComparator(true, true, true));
         
         for (Jogador j: lista) 
