@@ -35,4 +35,8 @@ package utfpr.ct.dainf.if62c.pratica;
     {
         this.numero = numero;
     }
+    public int getNumero()
+    {
+        return numero;
+    }
 }
