@@ -7,36 +7,36 @@ package utfpr.ct.dainf.if62c.pratica;
 
 /**
  *
- * @author lvale
+ * @author Victor Tholken
  */
 
  public class Jogador implements Comparable<Jogador> {
-    int numero;
-    String nome;
+    int num;
+    String jogadornome;
     public Jogador(int numero, String nome) {
-        this.numero = numero;
-        this.nome = nome;
+        this.num = numero;
+        this.jogadornome = nome;
     }
 
     @Override
     public String toString() {
-        return numero + " - " + nome;
+        return num + " - " + jogadornome;
     }
 
     public int compareTo(Jogador jogador) {
-        return numero - jogador.numero;
+        return num - jogador.num;
     }
     
     public void setNome(String nome)
     {
-        this.nome = nome;
+        this.jogadornome = nome;
     }
     public void setNumero(int numero)
     {
-        this.numero = numero;
+        this.num = numero;
     }
     public int getNumero()
     {
-        return numero;
+        return num;
     }
 }

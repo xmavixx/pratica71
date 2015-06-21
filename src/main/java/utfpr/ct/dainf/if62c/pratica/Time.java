@@ -13,26 +13,26 @@ import java.util.List;
 
 /**
  *
- * @author lvale
+ * @author Victor Tholken
  */
 public class Time {
     //Criando um mapa de jogadores
-    private HashMap<String, Jogador> jogadores = new HashMap<>();
+    private HashMap<String, Jogador> jogadorestime = new HashMap<>();
     
     //Função que retorna o mapa
     public HashMap getJogadores()
     {
-        return jogadores;
+        return jogadorestime;
     }
     
     public void addJogador(String posicao, Jogador jogador)
     {
-        jogadores.put(posicao, jogador);
+        jogadorestime.put(posicao, jogador);
     }
     public List<Jogador> ordena(JogadorComparator comparacao)
     {
         //Criando uma lista com os valores do mapa
-        List<Jogador> sortido = new ArrayList<>(jogadores.values());
+        List<Jogador> sortido = new ArrayList<>(jogadorestime.values());
         //Ordenando a lista
         Collections.sort(sortido, comparacao);
         return sortido;

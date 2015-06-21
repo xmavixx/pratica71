@@ -9,50 +9,50 @@ import java.util.Comparator;
 
 /**
  *
- * @author lvale
+ * @author Victor Tholken
  */
 public class JogadorComparator implements Comparator<Jogador>{
-    private boolean comparacaoNumero, comparacaoNome, comparacaoGeral;
+    private boolean numero, nome, geral;
     
     public JogadorComparator()
     {
-        comparacaoGeral = true;
-        comparacaoNumero = true;
-        comparacaoNome = true;
+        geral = true;
+        numero = true;
+        nome = true;
     }
     
     public JogadorComparator(boolean comparacaoGeral, boolean comparacaoNumero, boolean comparacaoNome)
     {
-        this.comparacaoGeral = comparacaoGeral;
-        this.comparacaoNome = comparacaoNome;
-        this.comparacaoNumero = comparacaoNumero;
+        this.geral = comparacaoGeral;
+        this.nome = comparacaoNome;
+        this.numero = comparacaoNumero;
     }
     
     @Override
     public int compare(Jogador jogador1, Jogador jogador2)
     {
         //Verificando se é para ordenar em função do nome ou numero
-        if(comparacaoGeral)
+        if(geral)
         {
             
             //Verificando se os numeros são iguais
-            if(comparaNumero(jogador1.numero, jogador2.numero) == 0)
+            if(comparaNumero(jogador1.num, jogador2.num) == 0)
             {
                 //comparando pelo nome
-                return comparaNome(jogador1.nome, jogador2.nome);
+                return comparaNome(jogador1.jogadornome, jogador2.jogadornome);
             }
-            return comparaNumero(jogador1.numero, jogador2.numero);
+            return comparaNumero(jogador1.num, jogador2.num);
         }
         else
         {
             
             //Verificando se os nomes são equivalentes
-            if(comparaNome(jogador1.nome, jogador2.nome) == 0)
+            if(comparaNome(jogador1.jogadornome, jogador2.jogadornome) == 0)
             {
                 //Comparando pelo numero
-                return comparaNumero(jogador1.numero, jogador2.numero);
+                return comparaNumero(jogador1.num, jogador2.num);
             }
-            return comparaNome(jogador1.nome, jogador2.nome);
+            return comparaNome(jogador1.jogadornome, jogador2.jogadornome);
         }
     }
     public int comparaNome(String n1, String n2)
@@ -66,7 +66,7 @@ public class JogadorComparator implements Comparator<Jogador>{
                 if(n1.charAt(i) < n2.charAt(i))
                 {
                     //Verificando se é acendente
-                    if(comparacaoNome)
+                    if(nome)
                         return -1;
                     else
                         return 1;
@@ -74,7 +74,7 @@ public class JogadorComparator implements Comparator<Jogador>{
                 if(n1.charAt(i) > n2.charAt(i))
                 {
                     //Verificando se é acendente
-                    if(comparacaoNome)
+                    if(nome)
                         return 1;
                     else
                         return -1;
@@ -89,7 +89,7 @@ public class JogadorComparator implements Comparator<Jogador>{
                 if(n1.charAt(i) < n2.charAt(i))
                 {
                     //Verificando se é acendente
-                    if(comparacaoNome)
+                    if(nome)
                         return -1;
                     else
                         return 1;
@@ -97,7 +97,7 @@ public class JogadorComparator implements Comparator<Jogador>{
                 if(n1.charAt(i) > n2.charAt(i))
                 {
                     //Verificando se é acendente
-                    if(comparacaoNome)
+                    if(nome)
                         return 1;
                     else
                         return -1;
@@ -111,7 +111,7 @@ public class JogadorComparator implements Comparator<Jogador>{
     public int comparaNumero(int n1, int n2)
     {
         //Verificando se é crescente ou decrescente
-        if(comparacaoNumero)
+        if(numero)
             return n1 - n2;
         else
             return (n1 - n2)*-1;

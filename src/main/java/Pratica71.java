@@ -15,49 +15,39 @@ import utfpr.ct.dainf.if62c.pratica.JogadorComparator;
 
 /**
  *
- * @author lvale
+ * @author Victor Tholken
  */
 public class Pratica71 {
     public static void main( String[] args ){
-        //Time alemanha;
-        //Set<String> posicoes;
-
-        //alemanha = new Time();
- 
-        /*alemanha.addJogador("Goleiro", new Jogador(28, "Manuel Neuer"));
-        alemanha.addJogador("Zagueiro", new Jogador(4, "Benedikt Höwedes"));
-        alemanha.addJogador("Atacante", new Jogador(25, "Thomas Müller"));
-        alemanha.addJogador("Bicho", new Jogador(25, "Luiz"));
-        */
-        //Criando uma lista
+        
         ArrayList<Jogador> lista = new ArrayList<>();
         
         Scanner scanner = new Scanner(System.in);
-        int numeroJogadores = 0;
+        int numeroJogador = 0;
         boolean valido = true;
         
         while(valido)
         {
             System.out.print("Digite o numero de jogadores: ");
             if (scanner.hasNextInt()) {
-                numeroJogadores = scanner.nextInt();
+                numeroJogador = scanner.nextInt();
                 valido = false;
             } else {
                 System.out.println("Digite um número!");
                 Object lixo = scanner.next();
             }
         }
-        int numero = 0;
+        int num = 0;
         String nome;
         valido = true;
         
-        while(numeroJogadores >0)
+        while(numeroJogador >0)
         {
             System.out.print("Digite o numero do jogador: ");
 
             if (scanner.hasNextInt()) 
             {
-                numero = scanner.nextInt();
+                num = scanner.nextInt();
             } 
             else 
             {
@@ -72,8 +62,8 @@ public class Pratica71 {
                 System.out.print("Digite o nome do jogador: ");
                 nome = scanner.next();
 
-                lista.add(new Jogador(numero, nome));
-                numeroJogadores--;
+                lista.add(new Jogador(num, nome));
+                numeroJogador--;
             }
             valido = true;
                     
@@ -87,14 +77,14 @@ public class Pratica71 {
             System.out.println(j);
         }
         
-        numero = 1;
-        while(numero != 0)
+        num = 1;
+        while(num != 0)
         {
             System.out.print("Digite o numero do jogador: ");
 
             if (scanner.hasNextInt()) 
             {
-                numero = scanner.nextInt();
+                num = scanner.nextInt();
             } 
             else 
             {
@@ -103,7 +93,7 @@ public class Pratica71 {
                 Object lixo = scanner.next();
                         
             }
-            if(numero == 0)
+            if(num == 0)
             {
                 break;
             }
@@ -112,7 +102,7 @@ public class Pratica71 {
                 boolean jaExiste = false;
                 System.out.print("Digite o nome do jogador: ");
                 nome = scanner.next();
-                Jogador jogador = new Jogador(numero, nome);
+                Jogador jogador = new Jogador(num, nome);
                 for(Jogador j: lista)
                 {
                     if(jogador.getNumero() == j.getNumero())
